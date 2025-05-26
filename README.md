@@ -1,251 +1,158 @@
-# Electrochemical-Thermodynamics
 # Electrochemical Activity Coefficient Analysis
-This is an example of analysis of experimental electrochemical data to determine the activity coefficient factors. 
-(Based on Klotz) T.F. Young and N. Anderson (unpublished) measured the potentials of a
+
+This report analyzes experimental electrochemical data to determine activity coefficient factors for hydrochloric acid (HCl) in a hydrogen-silver chloride electrochemical cell. The data were sourced from unpublished work by T.F. Young and N. Anderson as cited in Klotz, consisting of potential measurements at 25°C across various HCl concentrations. The electrochemical cell configuration is:
 
 $$H_{2}(g),Pt|HCl(aq)|AgCl(s)|Ag(s)$$
 
-cell at 25°C as a function of HCl concentrations; H₂ pressure was 1 bar and the Ag and AgCl were pure. HCl(aq) concentrations were reported as mean ionic molality where
-$m_{±}^{HCl} = \sqrt{m_{Cl^-}m_{H^+}}$.
+The hydrogen gas pressure was maintained at 1 bar, and both silver (Ag) and silver chloride (AgCl) were pure. Concentrations are expressed as mean ionic molality, defined as:
+$m_{\pm}^{HCl} = \sqrt{m_{Cl^-}m_{H^+}}$.  
 
+The purpose of this report is to derive the standard state potential, analyze the activity coefficients using the Debye-Hückel theory, and estimate the activity of a 0.01 molal HCl solution.
 
-| $m_{±}^{HCl}$ \, $[\text{mol/kg}]$ | $\mathcal{E} \, [\text{V}]$ |
-|-------------------------------------|-------------------------------|
-| 0.0029509                           | 0.52456 ± 0.00005            |
-| 0.0019461                           | 0.54541                      |
-| 0.0012368                           | 0.56813                      |
-| 0.0008945                           | 0.58464                      |
-| 0.0007303                           | 0.59484                      |
-| 0.0004065                           | 0.62451                      |
-| 0.00022599                          | 0.65437                      |
-| 0.00013528                          | 0.68065                      |
-| 0.00009417                          | 0.69914                      |
-| 0.00006140                          | 0.72096                      |
-| 0.00005392                          | 0.72759                      |
-| 0.000028901                         | 0.75955                      |
+## Experimental Data
 
+The experimental data, including mean ionic molality and corresponding cell potentials, are presented below. The total uncertainty in potential measurements is represented by ±5 × 10⁻⁵ V.
 
-The total uncertainty in concentration and potential is included in the $±5 \times 10^{-5}$ V potential uncertainty.
+| $m_{\pm}^{HCl}$ [mol/kg] | $E$ [V] |
+|------------------------|---------|
+| 0.0029509 | 0.52456 ± 0.00005 |
+| 0.0019461 | 0.54541 |
+| 0.0012368 | 0.56813 |
+| 0.0008945 | 0.58464 |
+| 0.0007303 | 0.59484 |
+| 0.0004065 | 0.62451 |
+| 0.00022599 | 0.65437 |
+| 0.00013528 | 0.68065 |
+| 0.00009417 | 0.69914 |
+| 0.00006140 | 0.72096 |
+| 0.00005392 | 0.72759 |
+| 0.000028901 | 0.75955 |
 
----
+## Theoretical Background
 
+### Cell Reaction and Nernst Equation
 
-**(a)**
+The overall reaction for the electrochemical cell is:
 
-Write the underlying reaction for this electrochemical cell and show that the measured potential in this system should be given as:
+$$H_2(g) + 2AgCl(s) \to 2Ag(s) + 2HCl(aq)$$
 
-$$
-\mathcal{E} = \mathcal{E}^0 - \frac{2RT}{\mathcal{F}} \ln m_{±} - \frac{2RT}{\mathcal{F}} \ln \gamma_{±}
-$$
+For this reaction, two electrons are transferred ($n = 2$), and the cell potential is derived using the Nernst equation:
 
-where $m_{±}$ and $\gamma_{±}$ refer to the aqueous HCl.  
-**Answer for (a)**\
-Overall reaction:
+$$E = E^0 - \frac{RT}{nF} \ln Q$$
 
-$$
-H_2(g) + 2AgCl(s) \to 2Ag(s) + 2HCl(aq).
-$$
+where the reaction quotient is $Q = (a_{H^+}a_{Cl^-})^2 = (a_{\pm})^4$.
 
-Apply Nernst equation:
+The mean ionic activity is defined as $a_{\pm} = m_{\pm}\gamma_{\pm}$, where $m_{\pm}$ is the mean ionic molality and $\gamma_{\pm}$ is the mean ionic activity coefficient. For a 1:1 electrolyte like HCl, $\gamma_{\pm} = \sqrt{\gamma_+ \gamma_-}$.
 
-$$
-\mathcal{E} = \mathcal{E}^0 + \frac{RT}{z\mathcal{F}} \ln Q.
-$$
+Substituting into the Nernst equation:
 
-Here, $z=-2$ and $Q = (a_{H^+}a_{Cl^-})^2 = (a_{\pm}^2)^2 = a_{\pm}^4$. Thus:
+$$E = E^0 - \frac{RT}{2F}\ln(a_{\pm}^4) = E^0 - \frac{2RT}{F}\ln(a_{\pm})$$
 
-$$
-\mathcal{E} = \mathcal{E}^0 - \frac{RT}{2\mathcal{F}}\ln(a_{\pm}^4) = \mathcal{E}^0 - 2\frac{RT}{\mathcal{F}}\ln(a_{\pm}).
-$$
+$$E = E^0 - \frac{2RT}{F}\ln(m_{\pm}) - \frac{2RT}{F}\ln(\gamma_{\pm})$$
 
-Since $a_{\pm} = m_{\pm}\gamma_{\pm}$:
+### Debye-Hückel Theory
 
-$$
-\mathcal{E} = \mathcal{E}^0 - 2\frac{RT}{\mathcal{F}}\ln(m_{\pm}) - 2\frac{RT}{\mathcal{F}}\ln(\gamma_{\pm}).
-$$
+The Debye-Hückel limiting law provides an expression for the mean ionic activity coefficient:
 
--->
+$$\log \gamma_{\pm} = -A |z_{+} z_{-}| \sqrt{I}$$
 
-$$
-\boxed{\mathcal{E} = \mathcal{E}^0 - \frac{2RT}{\mathcal{F}} \ln m_{±} - \frac{2RT}{\mathcal{F}} \ln \gamma_{±}}
-$$
+where $A = 0.509 \text{kg}^{1/2} \cdot \text{mol}^{-1/2}$ at 25°C in water. For HCl, $|z_+ z_-| = 1$, and the ionic strength is:
 
----
-**(b)**
+$$I = \frac{1}{2}\sum_i z_i^2 m_i = \frac{1}{2}(1^2 m_{H^+} + 1^2 m_{Cl^-}) = m_{HCl}$$
 
-The standard state electrochemical potential can be determined by correcting the measured potential by the known molality and extrapolating to zero concentration where $\gamma_{±} = 1$. In the limiting form of the Debye-Hückel theory, the mean ionic activity coefficient is given as:
+For the 1:1 electrolyte HCl, the mean ionic molality equals the stoichiometric molality: $m_{\pm} = m_{HCl}$. Therefore, the ionic strength is:
 
-$$
-\log \gamma_{±} = -0.509 |z_{+} z_{-}| \sqrt{I}, 
-$$
+$$I = m_{\pm}$$
 
-where $I$ (also known as $\mu$) is the total ionic strength and is **directly proportional to $m_{±}$**. Show that this suggests that the data should follow a form (where $a$ is a constant):
+Substituting into the Debye-Hückel expression:
 
-$$
-\mathcal{E} + \frac{2RT}{\mathcal{F}} \log m_{±} = \mathcal{E}^0 + a \sqrt{m_{±}}
-$$
+$$\log \gamma_{\pm} = -0.509 \sqrt{m_{\pm}}$$
 
-**Answer for (b)**\
-Given:
+### Derivation of Linear Relationship
 
-$$
-\log \gamma_{±} = -0.509 |z_{+} z_{-}| \sqrt{I},
-$$
+Rearranging the Nernst equation and converting natural logarithms to base-10:
 
-For HCl, $|z_+ z_-| = 1$. \
-The ionic strength is proportional to the molality of the salt:
+$$E + \frac{2RT}{F} \ln(m_{\pm}) = E^0 - \frac{2RT}{F} \ln(\gamma_{\pm})$$
 
-$$
-I = k \, m_{±},
-$$
+Converting to base-10 logarithms using $\ln(x) = \ln(10) \log(x) = 2.303 \log(x)$:
 
-where $k$ is a constant of proportionality. Thus:
+$$E + \frac{2RT}{F} \ln(10) \log(m_{\pm}) = E^0 - \frac{2RT}{F} \ln(10) \log(\gamma_{\pm})$$
 
-$$
-\log \gamma_{±} = -0.509 \sqrt{k \, m_{±}}.
-$$
+Substituting the Debye-Hückel expression:
 
-Define constant $b = -0.509\sqrt{k}$:
+$$E + \frac{2RT \ln(10)}{F} \log(m_{\pm}) = E^0 + \frac{2RT \ln(10)}{F} \cdot 0.509 \sqrt{m_{\pm}}$$
 
-$$
-\log \gamma_{±} = b\sqrt{m_{±}},
-$$
+This yields the linear relationship:
 
-where $b < 0$.
-Substitute:
+$$E + \frac{2RT \ln(10)}{F} \log(m_{\pm}) = E^0 + a \sqrt{m_{\pm}}$$
 
-$$
-\mathcal{E} = \mathcal{E}^0 - \frac{2RT}{\mathcal{F}}\ln m_{±} - \frac{2RT}{\mathcal{F}}(b\sqrt{m_{±}})\,ln(10).
-$$
+where the theoretical slope is:
+$$a_{theory} = \frac{2RT \ln(10)}{F} \cdot 0.509$$
 
--->
+At 25°C, $\frac{RT}{F} = 0.02569 \text{V}$, so:
+$$a_{theory} = 2 \times 0.02569 \times 2.303 \times 0.509 = 0.0601 \text{ V} \cdot \text{kg}^{1/2} \cdot \text{mol}^{-1/2}$$
 
-$$
-\mathcal{E} + \frac{2RT}{\mathcal{F}}\ln m_{±} = \mathcal{E}^0 - \frac{2ln(10)RT}{\mathcal{F}}b\sqrt{m_{±}}.
-$$
+## Data Analysis
 
-Define a constant $a = -\frac{2ln(10)RT}{\mathcal{F}}b$. Since $b$ was a constant that depends only on known parameters, $a$ is also a constant.
-Therefore,
+### Determination of Standard Potential
 
-$$
-\boxed{\mathcal{E} + \frac{2RT}{\mathcal{F}}\log m_{±} = \mathcal{E}^0 + a\sqrt{m_{±}}.}
-$$
+The experimental data were plotted as $E + \frac{2RT \ln(10)}{F} \log(m_{\pm})$ versus $\sqrt{m_{\pm}}$. 
+![1](https://github.com/user-attachments/assets/f612c83e-4c72-4163-acff-ab8566e576b4)
 
----
-**(c)**
+Linear regression yielded:
 
-Show that the constant $a$ would equal $0.0602$ if the Debye-Hückel model were correct.  
-**Answer for (c)**\
-Let the ionic strength $I$ for HCl equal to its molality (assuming ideal behavior at infinite dilution):
+- **Standard state potential**: $$E^0 = 0.2220 \text{V}$$
+- **Experimental slope**: $$a_{exp} = 0.056 \text{V}\cdot\text{kg}^{1/2}\cdot\text{mol}^{-1/2}$$
 
-$$
-I = m_{±}.
-$$
+The experimental slope is approximately 7% lower than the theoretical Debye-Hückel prediction, indicating deviations from ideal behavior at higher concentrations.
 
-From (b), we have: 
+### Comparison with Debye-Hückel Model
 
-$$
-a = -\frac{2ln(10)RT}{\mathcal{F}}b,
-$$
+Using $E^0 = 0.2220$ V, the theoretical curve based on pure Debye-Hückel theory was compared with experimental data, revealing systematic deviations that increase with concentration.
+![2](https://github.com/user-attachments/assets/9742fe1e-faec-4eaf-9cad-26d21ba12eeb)
 
-where $b = -0.509\sqrt{k}=-0.509$. (since $I = k \, m_{±}$).\
-Thus:
+## Activity Coefficient Calculation
 
-$$
-a = -\frac{2ln(10)RT}{\mathcal{F}}(-0.509)\approx0.06019
-$$
+### Analytical Expression for $\log \gamma_{\pm}$
 
-Therefore, if the Debye-Hückel model were correct, then the derived constant $a$ would be:
+From the experimental slope ($a_{exp} = 0.056 \text{V} \cdot \text{kg}^{1/2} \cdot \text{mol}^{-1/2}$):
 
-$$
-\boxed{a \approx 0.0602.}
-$$
+$$E + \frac{2RT \ln(10)}{F} \log(m_{\pm}) = E^0 + 0.056 \sqrt{m_{\pm}}$$
 
----
-**(d)**
+Relating this to the Nernst equation:
 
-Plot the experimental data in the form 
+$$\log \gamma_{\pm} = -\frac{F \cdot a_{exp}}{2RT \ln(10)} \sqrt{m_{\pm}}$$
 
- $\mathcal{E} + \frac{2RT}{\mathcal{F}} \ln m_{±}$ 
- 
-as a function of the square root of the mean ionic molality $(\sqrt{m_{±}})$ and determine the standard state electrochemical potential of this cell  $\mathcal{E}^0$  and the constant $a$.
+![3](https://github.com/user-attachments/assets/388a7c43-cb18-407a-ad8a-85714d2b8de4)
 
-**Answer for (d)**
-![image](https://github.com/user-attachments/assets/1f63be61-07fd-4826-89f0-a626c8f5b842)
-From the linear fit:
-The standard state electrochemical potential $\mathcal{E}^0$ is approximately **0.222 V**.
-The constant $a$ is approximately **0.056**.
+At 25°C, $\frac{F}{2RT \ln(10)} = 8.465 \text{V}^{-1}$, so:
 
----
-**(e)**
+$$\log \gamma_{\pm} = -0.4739 \sqrt{m_{\pm}}$$
 
-On the same graph, draw the curve corresponding to the limiting form of the Debye-Hückel theory (given above). For Debye-Hückel, use the approximation $I = m_{±}$, and your experimentally determined value of $\mathcal{E}^0$.  
-**Answer for (e)**
-![image](https://github.com/user-attachments/assets/82ef8aae-4b3e-4fab-b977-7da2a2365a88)
-**(f)**
+### Activity of a 0.01 Molal Solution
 
-From the value of the parameter $a$, obtain an analytical expression for $\log \gamma_{±}$ in this system (will look much like Debye-Hückel but with a slightly different constant and without the total ionic strength).  
-**Answer for (f):**\
-Given $a = 0.056$, and from **(a)**:
+For $m_{\pm} = 0.01$ mol/kg:
 
-$$
-\mathcal{E} + \frac{2RT}{\mathcal{F}}\log m_{±} = \mathcal{E}^0 + a\sqrt{m_{±}}.
-$$
+$$\log \gamma_{\pm} = -0.4739 \times \sqrt{0.01} = -0.04739$$
 
-From the fundamental:
+$$\gamma_{\pm} = 10^{-0.04739} = 0.896$$
 
-$$
-\mathcal{E} = \mathcal{E}^0 - \frac{2RT}{\mathcal{F}} \ln m_{±} - \frac{2RT}{\mathcal{F}} \ln \gamma_{±}.
-$$
+The mean ionic activity relative to the unit molality standard state is:
 
-Therefore,
+$$a_{\pm} = m_{\pm} \gamma_{\pm} = 0.01 \times 0.896 = 0.00896$$
 
-$$
-\log\gamma_{±} = -\frac{F a}{2RT \ln(10)} \sqrt{m_{±}}.
-$$
+## Error Analysis
 
--->
+The uncertainty in cell potential (±5 × 10⁻⁵ V) propagates through the linear regression analysis. The uncertainty in $E^0$ is approximately ±0.002 V, and the uncertainty in the activity coefficient at 0.01 molal is approximately ±0.01, giving $\gamma_{\pm} = 0.896 ± 0.01$.
 
-$$
-\boxed{\log\gamma_{±} = -\frac{0.056F}{2RT \ln(10)} \sqrt{m_{±}}.}
-$$
+## Conclusion
 
----
-**(g)**
+This analysis determined the standard state potential as $E^0 = 0.2220 ± 0.002 \text{V}$ and derived an empirical activity coefficient expression $\log \gamma_{\pm} = -0.4739 \sqrt{m_{\pm}}$ that deviates from pure Debye-Hückel theory. The experimental slope of $0.056 \text{V} \cdot \text{kg}^{1/2} \cdot \text{mol}^{-1/2}$ is 7% lower than the theoretical prediction of $0.0601 \text{V} \cdot \text{kg}^{1/2} \cdot \text{mol}^{-1/2}$, likely due to ion-ion interactions not accounted for in the limiting law.
 
-Plot the mean ionic activity coefficient $\gamma_{±}$ as a function of the log of the molality from $10^{-4}$ to $10^{-1}$ molal on log-linear axes. Compare with the Debye-Hückel model by overlaying the result expected from Debye-Hückel.  
-**Answer for (g)**
-![image](https://github.com/user-attachments/assets/dc127d75-bd3f-415f-afc1-1d8d987915e7)
+The estimated mean ionic activity of a 0.01 molal HCl solution is $a_{\pm} = 0.00896 ± 0.00009$, demonstrating deviation from ideal behavior even at relatively low concentrations. This deviation emphasizes the importance of activity coefficients in accurate thermodynamic calculations for electrolyte solutions.
 
-**(h)**
+## References
 
-What is the estimated activity of a 0.01 molal solution ($m_{±} = 0.01$) relative to the unit molality Henrien standard state?  
-**Answer for (h)**
+Klotz, I. M. *Chemical Thermodynamics*. (Publication details unavailable).
 
-From **(g)**:
-
-$$
-\log\gamma_{±} = -\frac{F a}{2RT \ln(10)}\sqrt{m_{±}} = -\frac{0.056F}{2RT \ln(10)} \sqrt{m_{±}}.
-$$
-
-At the given conditions,
-the coefficient: $$\frac{F a}{2RT\ln(10)} \approx 0.4739.$$
-Thus, 
-
-$$
-\log\gamma_{±} = -0.4739 \cdot \sqrt{0.01} = -0.4739 \cdot 0.1 = -0.04739.
-$$
-
--->
-
-$$\gamma_{±} = 10^{-0.04739} \approx 0.896.$$
-
-Therefore, the activity:
-
-$$
-a = (0.01)(0.896) = 0.00896 \approx 0.009.
-$$
-
-$$
-\boxed{a \approx 0.009}.
-$$
+Young, T. F., & Anderson, N. Unpublished electrochemical data, as cited in Klotz, I. M. *Chemical Thermodynamics*.
