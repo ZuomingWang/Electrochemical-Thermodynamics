@@ -9,24 +9,6 @@ $m_{\pm}^{HCl} = \sqrt{m_{Cl^-}m_{H^+}}$.
 
 The purpose of this report is to derive the standard state potential, analyze the activity coefficients using the Debye-Hückel theory, and estimate the activity of a 0.01 molal HCl solution.
 
-## Experimental Data
-
-The experimental data, including mean ionic molality and corresponding cell potentials, are presented below. The total uncertainty in potential measurements is represented by ±5 × 10⁻⁵ V.
-
-| $m_{\pm}^{HCl}$ [mol/kg] | $E$ [V] |
-|------------------------|---------|
-| 0.0029509 | 0.52456 ± 0.00005 |
-| 0.0019461 | 0.54541 |
-| 0.0012368 | 0.56813 |
-| 0.0008945 | 0.58464 |
-| 0.0007303 | 0.59484 |
-| 0.0004065 | 0.62451 |
-| 0.00022599 | 0.65437 |
-| 0.00013528 | 0.68065 |
-| 0.00009417 | 0.69914 |
-| 0.00006140 | 0.72096 |
-| 0.00005392 | 0.72759 |
-| 0.000028901 | 0.75955 |
 
 ## Theoretical Background
 
@@ -156,3 +138,21 @@ The estimated mean ionic activity of a 0.01 molal HCl solution is $a_{\pm} = 0.0
 Klotz, I. M. *Chemical Thermodynamics*. (Publication details unavailable).
 
 Young, T. F., & Anderson, N. Unpublished electrochemical data, as cited in Klotz, I. M. *Chemical Thermodynamics*.
+## Experimental Data
+
+The experimental data, including mean ionic molality and corresponding cell potentials, are presented below. The total uncertainty in potential measurements is represented by ±5 × 10⁻⁵ V.
+
+| $m_{\pm}^{HCl}$ [mol/kg] | $E$ [V] |
+|------------------------|---------|
+| 0.0029509 | 0.52456 ± 0.00005 |
+| 0.0019461 | 0.54541 |
+| 0.0012368 | 0.56813 |
+| 0.0008945 | 0.58464 |
+| 0.0007303 | 0.59484 |
+| 0.0004065 | 0.62451 |
+| 0.00022599 | 0.65437 |
+| 0.00013528 | 0.68065 |
+| 0.00009417 | 0.69914 |
+| 0.00006140 | 0.72096 |
+| 0.00005392 | 0.72759 |
+| 0.000028901 | 0.75955 |
